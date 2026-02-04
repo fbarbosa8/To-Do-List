@@ -16,3 +16,6 @@ Projeto desenvolvido em Python utilizando Flask com sistema de gerenciamento de 
 
 ## Objetivo
 Projeto criado para praticar conceitos de back-end e front-end, rotas e estruturação de aplicações web.
+
+## Sistema funcionando
+video do sistema em local host https://youtu.be/oZ3Y7IABv-o
