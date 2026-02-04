@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}To-Do{% endblock %}
+
+{% block content %}
+
+<h1>To-Do</h1>
+
+<form method="POST">
+    <input type="text" name="tarefa" placeholder="Digite a tarefa">
+    <button type="submit">Adicionar</button>
+</form>
+
+<ul>
+    {% for tarefa in tarefas %}
+        <li>
+            {% if tarefa.concluida%}
+                <s>{{ tarefa.texto }}</s>
+            {% else %}
+                {{ tarefa.texto }}
+
+                <form method="POST" action="{{ url_for('concluir', index=loop.index0) }}" style="display:inline;">
+                    <button type="submit">Concluir</button>
+                </form>
+                <form method="POST" action="{{ url_for('excluir', index=loop.index0) }}" style="display:inline; margin-left:6px;">
+                    <button type="submit">Excluir</button>
+                </form>
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
